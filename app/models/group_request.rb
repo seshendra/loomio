@@ -1,17 +1,22 @@
 class GroupRequest < ActiveRecord::Base
-  attr_accessible :admin_email, :description, :expected_size, :name,
-                  :cannot_contribute, :max_size, :robot_trap, :sectors_metric,
-                  :other_sectors_metric, :distribution_metric
+  attr_accessible :admin_name, :admin_email, :country_name, :name, :sectors_metric, :description, :expected_size, 
+                  :max_size, :contribution_type, :contribution_amount, :contribution_frequency, :robot_trap
 
   attr_accessor :robot_trap
 
-  validates :name, :presence => true, :length => {:maximum => 250}
-  validates :description, :presence => true
-  validates :admin_email, :presence => true, :email => true
-  validates :expected_size, :presence => true
-  validates :distribution_metric, :presence => true
+  PAYMENT_TYPES = ['subscription', 'donation']
+  PAYMENT_FREQUENCIES = ['monthly', 'once']
 
-  serialize :sectors_metric, Array
+  validates :admin_name, presence: true, length: {maximum: 250}
+  validates :admin_email, presence: true, email: true
+  validates :country_name, presence: true
+  validates :name, presence: true, length: {maximum: 250}
+  validates :sectors_metric, presence: true
+  validates :description, presence: true
+  validates :expected_size, presence: true
+  validates :contribution_type, presence: true, inclusion: {:in => PAYMENT_TYPES}
+  validates :contribution_amount, presence: true
+  validates :contribution_frequency, presence: true, inclusion: {:in => PAYMENT_FREQUENCIES }
 
   belongs_to :group
 

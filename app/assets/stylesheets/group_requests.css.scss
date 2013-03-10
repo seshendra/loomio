@@ -1,3 +1,24 @@
 // Place all the styles related to the GroupRequests controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com
+@import "settings";
+
+.collection-radio-buttons {
+  display: inline;
+  font-size: $font-large;
+}
+.contribution-info { 
+  margin: 3px 5px 0 15px;
+  .control-group { 
+    float: left;
+    padding: 0 5px 0 5px;
+    position: relative;
+    bottom: 5px;
+  }
+  .controls { float: left; }
+  .controls input { width: 100px; }
+}
+#contribute-label {
+  float: left;
+  font-weightrd: bold;
+}
