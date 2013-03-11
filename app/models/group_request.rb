@@ -15,7 +15,6 @@ class GroupRequest < ActiveRecord::Base
   validates :description, presence: true
   validates :expected_size, presence: true
   validates :contribution_type, presence: true, inclusion: {:in => PAYMENT_TYPES}
-  validates :contribution_amount, presence: true
   validates :contribution_frequency, presence: true, inclusion: {:in => PAYMENT_FREQUENCIES }
 
   belongs_to :group
