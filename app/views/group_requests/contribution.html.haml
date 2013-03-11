@@ -21,7 +21,7 @@
           %p We'll ask you to review this in 6 months and we may ask your group members for contributions.
           #donation-options.clearfix.hidden
             #contribute-label Contribute $
-            = f.input :contribution_amount, as: :string, label: "", id: 'group_request_contribution_amount'
+            = f.input :contribution_amount, as: :string, label: "", value: '5', id: 'group_request_contribution_amount'
             = f.input :contribution_frequency, collection: ['monthly', 'once'], value: 'monthly', include_blank: false, label: ""
 
       = f.submit 'OK, This is what we can contribute', :class => "btn btn-large btn-info btn-block", :data => {:disable_with => "Requesting new group"}
