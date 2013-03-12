@@ -85,12 +85,14 @@ FactoryGirl.define do
   end
 
   factory :group_request do
-    name Faker::Name.name
-    expected_size 50
-    description "MyText"
+    admin_name Faker::Name.name
     admin_email Faker::Internet.email
-    distribution_metric 3
-    sectors_metric ["community"]
+    country_name "nz"
+    sector ["community"]
+    description "MyText"
+    expected_size 50
+    contribution_type "donation"
+    contribution_frequency "once"
   end
 
 end

@@ -1,5 +1,5 @@
 class GroupRequestsController < BaseController
-  before_filter :authenticate_user!, except: [:start, :new, :create, :confirmation]
+  before_filter :authenticate_user!, except: [:start, :new, :create, :contribution, :confirmation]
 
   def new
     @group_request = GroupRequest.new
@@ -8,7 +8,7 @@ class GroupRequestsController < BaseController
   def create
     @group_request = GroupRequest.new(params[:group_request])
     if @group_request.save
-      render action: 'contribution'
+      render 'contribution'
     else
       render action: 'new'
     end

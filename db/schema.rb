@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(:version => 20130308015306) do
     t.integer  "max_size",               :default => 50
     t.string   "robot_trap"
     t.integer  "distribution_metric"
-    t.string   "sectors_metric"
+    t.string   "sector"
     t.string   "other_sectors_metric"
     t.string   "admin_name"
     t.string   "country_name"

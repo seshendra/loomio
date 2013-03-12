@@ -9,7 +9,7 @@
       = f.input "country_name", as: :string#, as: :country
       %h2 Tell us about your group
       = f.input :name, label: "Group name"
-      = f.input :sectors_metric, label: "What type of group/organisation is it?", collection: ['Community', 'Business', 'Government', 'Other']
+      = f.input :sector, label: "What type of group/organisation is it?", collection: ['community', 'business', 'government', 'other']
       = f.input :description, label: "Why do you want to use Loomio?", placeholder: "Tell us a bit about your group, and why you'd like to use Loomio"
       = f.input :expected_size, label: "Approximate number of people involved"
       = f.submit 'Next', :class => "btn btn-large btn-info btn-block", id: "submit-group-request", :data => {:disable_with => "Validating"}

@@ -1,9 +1,10 @@
 class GroupRequest < ActiveRecord::Base
-  attr_accessible :admin_name, :admin_email, :country_name, :name, :sectors_metric, :description, :expected_size, 
+  attr_accessible :admin_name, :admin_email, :country_name, :name, :sector, :description, :expected_size, 
                   :max_size, :contribution_type, :contribution_amount, :contribution_frequency, :robot_trap
 
   attr_accessor :robot_trap
 
+  SECTORS = ['community', 'business', 'government', 'other']
   PAYMENT_TYPES = ['subscription', 'donation']
   PAYMENT_FREQUENCIES = ['monthly', 'once']
 
@@ -11,7 +12,7 @@ class GroupRequest < ActiveRecord::Base
   validates :admin_email, presence: true, email: true
   validates :country_name, presence: true
   validates :name, presence: true, length: {maximum: 250}
-  validates :sectors_metric, presence: true
+  validates :sector, presence: true
   validates :description, presence: true
   validates :expected_size, presence: true
   validates :contribution_type, presence: true, inclusion: {:in => PAYMENT_TYPES}
