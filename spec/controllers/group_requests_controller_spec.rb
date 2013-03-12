@@ -24,5 +24,4 @@ describe GroupRequestsController do
       response.should render_template("confirmation")
     end
   end
-
 end
