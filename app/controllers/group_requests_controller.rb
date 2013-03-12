@@ -1,5 +1,5 @@
 class GroupRequestsController < BaseController
-  before_filter :authenticate_user!, except: [:start, :new, :create, :contribution, :confirmation]
+  before_filter :authenticate_user!, except: [:start, :new, :create, :contribute, :confirmation]
 
   def new
     @group_request = GroupRequest.new
@@ -8,17 +8,15 @@ class GroupRequestsController < BaseController
   def create
     @group_request = GroupRequest.new(params[:group_request])
     if @group_request.save
-      render 'contribution'
+      render 'contribute'
     else
       render action: 'new'
     end
   end
 
-  def contribution
+  def contribute
     group_request = GroupRequest.find(params[:id])
-    group_request.contribution_type = params[:group_request][:contribution_type]
-    group_request.contribution_amount = params[:group_request][:contribution_amount]
-    group_request.contribution_frequency = params[:group_request][:contribution_frequency]
+    group_request.can_contribute = params[:group_request][:can_contribute]
     group_request.save!
     redirect_to group_request_confirmation_url
   end

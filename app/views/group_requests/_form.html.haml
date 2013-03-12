@@ -15,6 +15,4 @@
       = f.submit 'Next', :class => "btn btn-large btn-info btn-block", id: "submit-group-request", :data => {:disable_with => "Next"}
 
       = f.input :robot_trap, :label => false, :placeholder => "Leave this field blank if you're a human", :input_html => { :class => "robot_trap" }
-      = f.input :contribution_type, as: :hidden
-      = f.input :contribution_amount, as: :hidden
-      = f.input :contribution_frequency, as: :hidden
+      = f.input :can_contribute, as: :hidden

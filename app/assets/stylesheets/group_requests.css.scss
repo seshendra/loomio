@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com
 @import "settings";
 
+// contribute form
+#contribute-page {
+  label {font-size: $font-medium;}
+}
+
+
+// contribution form
 .collection-radio-buttons {
   display: inline;
   font-size: $font-large;

@@ -35,10 +35,8 @@ When /^I fill in and submit the Request New Group Form as a Robot$/ do
   find("#submit-group-request").click
 end
 
-When /^I fill in and submit the contribution page$/ do
-  find("#donation-option").click
-  fill_in "group_request_contribution_amount", with: "68"
-  find("#group_request_contribution_frequency").click
+When /^I fill in and submit the contribute page$/ do
+  find("#cannot-contribute-option").click
   find("#submit-contribution").click
 end
 
@@ -48,13 +46,8 @@ When /^I fill in and submit the Request New Group Form incorrectly$/ do
   find("#submit-group-request").click
 end
 
-When /^I fill in choosing to subscribe and submit the contribution page$/ do
-  find("#subscription-option").click
-  find("#submit-contribution").click
-end
-
-Then /^I should be directed to the contribution page$/ do
-  page.should have_css("#contribution-page")
+Then /^I should be directed to the contribute page$/ do
+  page.should have_css("#contribute-page")
 end
 
 Then /^a new Loomio group request should be created$/ do
@@ -77,6 +70,3 @@ Then /^I should still see the Group Request Form$/ do
   page.should have_css("#new_group_request")
 end
 
-Then /^My contribution to loomio should be set$/ do
-  GroupRequest.first.contribution_amount.should_not == nil
-end

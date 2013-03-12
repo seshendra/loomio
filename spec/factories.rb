@@ -92,8 +92,6 @@ FactoryGirl.define do
     name Faker::Name.name
     description "MyText"
     expected_size 50
-    contribution_type "donation"
-    contribution_frequency "once"
+    can_contribute true
   end
-
 end

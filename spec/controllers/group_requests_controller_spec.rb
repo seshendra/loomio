@@ -3,16 +3,16 @@ require 'spec_helper'
 describe GroupRequestsController do
 
   describe "#create" do
-    it "should redirect to the contribution page" do
+    it "should redirect to the contribute page" do
       post :create, :group_request => attributes_for(:group_request)
-      response.should render_template("contribution")
+      response.should render_template("contribute")
     end
   end
 
-  describe "#contribution" do
+  describe "#contribute" do
     it "should redirect to the confirmation page" do
       group_request = create :group_request
-      put :contribution, id: group_request.id, :group_request => {contribution_type: "donation", contribution_amount: "67", contribution_frequency: "monthly"}
+      put :contribute, id: group_request.id, :group_request => {can_contribute: "false"}
       response.should redirect_to(group_request_confirmation_url)
     end
   end
