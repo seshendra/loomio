@@ -5,14 +5,14 @@
       We're in 'private beta' which means we're manually approving each group that asks to join Loomio. This means there might be a delay in getting you on board but you will hear from us within 48 hours.
       %h2 Tell us about yourself
       = f.input :admin_name, label: "What is your name?"
-      = f.input :admin_email, label: "What is your is your email address?"
+      = f.input :admin_email, label: "What is your email address?"
       = f.input "country_name", as: :string#, as: :country
       %h2 Tell us about your group
-      = f.input :name, label: "Group name"
+      = f.input :name, label: "What is the name of your group/organisation?"
       = f.input :sector, label: "What type of group/organisation is it?", collection: ['community', 'business', 'government', 'other']
       = f.input :description, label: "Why do you want to use Loomio?", placeholder: "Tell us a bit about your group, and why you'd like to use Loomio"
-      = f.input :expected_size, label: "Approximate number of people involved"
-      = f.submit 'Next', :class => "btn btn-large btn-info btn-block", id: "submit-group-request", :data => {:disable_with => "Validating"}
+      = f.input :expected_size, label: "How many people to you expect to be in your loomio group?"
+      = f.submit 'Next', :class => "btn btn-large btn-info btn-block", id: "submit-group-request", :data => {:disable_with => "Next"}
 
       = f.input :robot_trap, :label => false, :placeholder => "Leave this field blank if you're a human", :input_html => { :class => "robot_trap" }
       = f.input :contribution_type, as: :hidden

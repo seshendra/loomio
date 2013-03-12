@@ -57,8 +57,7 @@ Then /^a new Loomio group request should be created$/ do
 end
 
 Then /^I should be told that my request will be reviewed shortly$/ do
-  page.should have_content("Thanks for getting in touch!")
-  # page.should have_css("body.group_requests.confirmation")
+  page.should have_css("body.group_requests.confirmation")
 end
 
 Then /^a new Loomio group request should not be created$/ do

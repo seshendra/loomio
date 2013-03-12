@@ -89,6 +89,7 @@ FactoryGirl.define do
     admin_email Faker::Internet.email
     country_name "nz"
     sector ["community"]
+    name Faker::Name.name
     description "MyText"
     expected_size 50
     contribution_type "donation"

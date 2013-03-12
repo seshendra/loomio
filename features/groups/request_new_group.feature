@@ -9,7 +9,6 @@ Feature: User requests to create a group on Loomio
     Then a new Loomio group request should be created
     And I should be directed to the contribution page
     When I fill and submit the contribution page
-    Then debugger
     Then I should be told that my request will be reviewed shortly
 
   Scenario: User submits an incorrect Request New Group Form
@@ -24,4 +23,4 @@ Feature: User requests to create a group on Loomio
     Then a new Loomio group request should be created and marked as spam
     And I should be directed to the contribution page
     When I fill and submit the contribution page
-    And I should be told that my request will be reviewed shortly
+    Then I should be told that my request will be reviewed shortly
