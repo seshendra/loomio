@@ -5,7 +5,10 @@
 
 // contribute form
 #contribute-page {
-  label {font-size: $font-medium;}
+  label {
+    display: inline;
+    font-size: $font-medium;
+  }
 }
 
 
@@ -26,6 +29,6 @@
   #group_request_contribution_amount{ width: 80px; }
   #group_request_contribution_frequency { width: 120px; }
 }
-#contribute-label {
+#contribution-label {
   float: left;
 }

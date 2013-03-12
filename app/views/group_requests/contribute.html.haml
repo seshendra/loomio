@@ -5,12 +5,12 @@
 
     = simple_form_for @group_request, url: contribute_group_request_path(@group_request.id) do |f|
       %h2 How would you like to contribute?
-      %input{id: 'can-contribute-option', name: 'group_request[can_contribute]', type: 'radio', value: :true, checked: "checked"}
+      %input{id: 'can-contribute-option', name: 'group_request[can_contribute]', type: 'radio', value: "true", checked: "checked"}
       %label{class: 'collection-radio-buttons', for: 'can-contribute-option'}
         My group/organisation can pay a subscription for Loomio
       %br
       %br
-      %input{id: 'cannot-contribute-option', name: 'group_request[can_contribute]', type: 'radio', value: :false}
+      %input{id: 'cannot-contribute-option', name: 'group_request[can_contribute]', type: 'radio', value: "false"}
       %label{class: 'collection-radio-buttons', for: 'cannot-contribute-option'}
         My group/organisation doesn't have the budget to pay for Loomio
 

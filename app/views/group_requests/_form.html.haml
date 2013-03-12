@@ -6,7 +6,7 @@
       %h2 Tell us about yourself
       = f.input :admin_name, label: "What is your name?"
       = f.input :admin_email, label: "What is your email address?"
-      = f.input "country_name", as: :string#, as: :country
+      = f.input "country_name"
       %h2 Tell us about your group
       = f.input :name, label: "What is the name of your group/organisation?"
       = f.input :sector, label: "What type of group/organisation is it?", collection: ['community', 'business', 'government', 'other']

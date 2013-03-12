@@ -10,10 +10,9 @@ class GroupRequest < ActiveRecord::Base
   validates :admin_email, presence: true, email: true
   validates :country_name, presence: true
   validates :name, presence: true, length: {maximum: 250}
-  validates :sector, presence: true#, inclusion: {:in => SECTORS}
+  validates :sector, presence: true, inclusion: {:in => SECTORS}
   validates :description, presence: true
   validates :expected_size, presence: true
-  # validates :can_contribute, presence: true
 
   belongs_to :group
 
